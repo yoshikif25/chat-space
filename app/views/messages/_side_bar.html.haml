@@ -1,1 +1,10 @@
-<サイドバー>
+.sidebar
+  .sidebar_user
+    .sidebar_user_name
+      .sidebar_user_name_username yoshiki
+      .sidebar_user_name_icon
+        = link_to "#", class: "sidebar_user_name_icon_edit" do
+          = icon('far', 'edit')
+        = link_to "#", class: "sidebar_user_name_icon_cog" do
+          = icon('fas', 'cog')
+  .sidebar_group
