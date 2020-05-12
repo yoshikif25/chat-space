@@ -1,10 +1,24 @@
-.sidebar
-  .sidebar_user
-    .sidebar_user_name
-      .sidebar_user_name_username yoshiki
-      .sidebar_user_name_icon
-        = link_to "#", class: "sidebar_user_name_icon_edit" do
-          = icon('far', 'edit')
-        = link_to "#", class: "sidebar_user_name_icon_cog" do
-          = icon('fas', 'cog')
-  .sidebar_group
+.side-bar
+  .header
+    %h3.header__name
+      ユーザーネーム
+    %ul.header__lists
+      %li.list
+        = link_to '#' do
+          = icon('far', 'edit', class: 'icon')
+      %li.list
+        = link_to '#' do
+          = icon('fas', 'cog', class: 'icon')
+  
+  .groups
+    .group
+      .group__name
+        グループ名
+      .group__message
+        新着メッセージ
+    .group
+      .group__name
+      .group__message
+    .group
+      .group__name
+      .group__message
