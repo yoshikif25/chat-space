@@ -1,6 +1,6 @@
 .wrapper
 
-  = render 'side_bar'
+  = render 'messages/side_bar'
 
   .chat
     .header
@@ -18,39 +18,15 @@
       .right-header
         = link_to '#', class: "right-header__link" do
           Edit
+          
     .messages
-      .message
-        .upper-message
-          .upper-message__user-name
-            メンバー
-          .upper-message__data
-            2020/05/14
-        .lower-message
-          .lower-message__content
-            メッセージ
-      .message
-        .upper-message
-          .upper-message__user-name
-            メンバー
-          .upper-message__data
-            2020/05/14
-        .lower-message
-          .lower-message__content
-            メッセージ
-      .message
-        .upper-message
-          .upper-message__user-name
-            メンバー
-          .upper-message__data
-            2020/05/14
-        .lower-message
-          .lower-message__content
-            メッセージ
+      = render @messages
+
     .form
-      %form
-        %input.form__message
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
         .form__mask
-          %label.form__mask__image
-            = icon('fa', 'image',class: 'icon')
-            %input.hidden{type: 'file'}
-        %input.form__submit{type: 'submit', value: 'send'}
+          = f.label :image, class: 'form__mask__image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
