@@ -4,6 +4,7 @@
     box-sizing: border-box;
     height: 100px;
     padding: 0 40px;
+    border-bottom: solid 1px #eeeeee;
     .left-header {
       float: left;
       &__title {
@@ -39,7 +40,7 @@
   .messages {
     background-color: #fafafa;
     box-sizing: border-box;
-    padding: 35px 40px 0;
+    padding: 46px 40px 0;
     height: calc(100vh - 100px - 90px);
     overflow: scroll;
     .message {
@@ -50,44 +51,48 @@
           font-size: 16px;
           font-weight: bold;
         }
-        &__data {
+        &__date {
           color: #999999;
-          font-size: 16px;
+          font-size: 12px;
           padding-left: 10px;
         }
       }
       .lower-message {
-        color: #434A54;
-        font-size: 14px;
-        padding: 12px;
-        margin-bottom: 46px;
+        margin-top: 10px;
+        &__content {
+          color: #434A54;
+          font-size: 14px;
+          margin-bottom: 40px;
+        }
       }
     }
   }
   .form {
-    background-color: #d2d2d2;
+    background-color: #dddddd;
     box-sizing: border-box;
     height: 90px;
     padding: 20px 50px 20px 40px;
+    position: relative;
     &__message {
       border: none;
       float: left;
       height: 50px;
       width: calc(100% - 150px);
+      position: relative;
     }
     &__mask {
-      background-color: $white;
+      position: absolute;
       float: left;
       height: 50px;
-      padding-right: 10px;
+      right: 210px;
       &__image {
         font-size: 20px;
         line-height: 50px;
       }
-    }
       .hidden {
         display: none;
       }
+    }
     &__submit {
       background-color: $light_blue;
       border: none;
